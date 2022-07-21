@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c){
+                let answer;  //답변 
+                if (a < b) { //a가 보다 작으면 a가 answer
+                    answer = a;
+
+                } else { 
+                    answer = b; //a가 b 보다 크면 b가 answer
+
+                } if (c < answer) { //c가 answer (a, b 중 작은값) 보다 작으면 c가 answer
+                    answer = c; 
+                }
+
+                return answer;  //답변을 리턴한다.
+            }
+
+            console.log(solution(6, 5, 3));
+        </script>
+    </body>
+</html>
+
