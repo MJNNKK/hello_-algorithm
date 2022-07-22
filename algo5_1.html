@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){         
+                let answer, min = Number.MAX_SAFE_INTEGER; //안정적인 가장 큰 값이 미니멈에 저장됨
+                //console.log(min);
+                for(let i = 0; i < arr.length; i++) { // arr배열의 0번부터 마지막 까지 탐색한다.
+                    if(arr [i]<min) {                 // arr[i](0~n번째숫자) 보다 min이 크면 
+                        min = arr[i];                 // arr[i]가 min 를 반복하는 코드
+                        answer = min;                 // answer 도출값 = min 최솟값 
+                    }
+                }
+
+
+                return answer;
+
+            }
+
+            let arr=[5, 7, 1, 3, 2, 9, 11];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
