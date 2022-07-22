@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(n){
+                let answer;
+                let das = 12;
+                let num = n / das; 
+                if (n % das > 0) {
+                    answer = Math.floor((num) + 1);    //Math.floor() = 버림 명령어
+                                                       //Math.ceil() = 올림명령어
+                }                                      //Math.round() = 반올림 명령어   
+                return answer;
+            }
+
+            console.log(solution(178));
+        </script>
+    </body>
+</html>
