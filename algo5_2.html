@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){         
+                //let answer = Math.min(...arr);   //Math.min(...) = 배열의 최솟값을 구하는 함수
+                let answer = Math.min.apply(null, arr); //위와 같게 사용된다.최소값, 최대값 보충내용
+
+            }
+
+            let arr=[5, 7, 1, 3, 2, 9, 11];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
