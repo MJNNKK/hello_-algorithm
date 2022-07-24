@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                let answer = [];         // answer에 여러가지 답을 넣어야 해서 배열로 바꿔준다.
+                let sum = 0, min = Number.MAX_SAFE_INTEGER //min에 가장 큰 수를 넣어놓는다.
+                for (let x of arr) {     // arr 배열을 0 ~ 읽어간다.
+                    if (x % 2 ===1) {    // 나눠서 나머지가 1이면 홀 수 arr에서 홀 수만 찾아낸다.
+                        sum += x;        // 찾아낸 홀 수 를 다 더한다.
+                        if (x < min) {   // 찾아낸 홀 수를 순서대로 min과 비교해 작은 수를 min에 넣는다.
+                            min = x;     // min은 찾아낸 홀 수중 최소값이 된다.
+                        }
+                    }
+                }
+                answer.push(sum);        // push를 통해 배열로 바꿔준 answer에 sum값을 넣어준다.
+                answer.push(min);        // push를 통해 배열로 바꿔준 answer에 min값을 넣어준다.
+
+                return answer;
+            }
+            
+            arr=[12, 77, 38, 41, 53, 92, 85];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
