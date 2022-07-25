@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                let answer = arr;             //강의 없이 혼자풀이 실패...
+                sum = 0;                        // arr.reduce로 토탈을 먼저구해준다.
+                for (let i = 0; i < arr.length; i++) {
+                    let tot = sum += arr[i];      // 위처럼 토탈 먼저 구해주고 얘는 지운다.
+                    for (let j = 1; j < arr.length; j++) { // 이중for문 이미 functoin solution에 arr이 있으므로
+                        if (tot - (arr[i] + arr[j]) === 100) {  // i = 0; i < 8(이런식으로 배열위치를 지정)
+                            console.log(tot);                   // j = i + 1(i가 0일 때 j는1부터 반복)
+                        }
+                    }
+                }
+                
+
+                return answer;
+            }
+            
+            let arr=[20, 7, 23, 19, 10, 15, 25, 8, 13];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
