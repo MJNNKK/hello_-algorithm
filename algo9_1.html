@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer = "";      // 첫 번째 문제풀이.
+                for (let x of s) {    // x = s를 돌며 탐색
+                    if (x === 'A') {  // x === A 탐색하며 x와 A가 같으면
+                        answer += '#';// answer = answer +'#' A를 #으로 바꿔준다. (정확히 이해하지 못함) 
+                    } else {
+                        answer += x;  // x === A가 false일 때 answer += x다. (정확히 이해하지 못함) 
+                    }
+                }
+
+
+                return answer;
+            }
+            
+            let str="BANANA";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
