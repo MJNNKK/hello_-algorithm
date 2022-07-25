@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer = s.replace(/A/g,"#"); // replace(/바꿀문자/g(전역검색)i(붙으면 대소문자 가리지않음))
+                                                  // , '바꿔줄 문자'정규표현식? 구글링으로 찾아봄.
+                return answer;
+            }
+            
+            let str="BANANA";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
