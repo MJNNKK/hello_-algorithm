@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s, t){
+                let answer = 0; // 카운팅을 위해 값으 0으로 넣어줌
+                for (let x of s) {  //x === s(str)을 처음부터 끝까지 읽는다.  
+                    if (x === t){   //x === t(입력받은 문자)일때        혼자서 할 땐 s, t 를 쓰지않음 주의!!
+                        answer ++;  //answer === 1씩 카운팅 된다
+                    }
+                }
+
+                return answer;
+            }
+            
+            let str="COMPUTERPROGRAMMING";
+            console.log(solution(str, 'R'));
+        </script>
+    </body>
+</html>

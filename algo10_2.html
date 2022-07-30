@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s, t){
+                let answer = s.split(t).length; //split으로 입력받은 문자를 (t)구분자로 문자열을 분리시킴
+
+                return answer - 1;        // 구분자보다 문자열이 1개 더 많으니 -1로 구분자 숫자랑 맞춰준다.
+            }
+            
+            let str="COMPUTERPROGRAMMING";
+            console.log(solution(str, 'R'));
+        </script>
+    </body>
+</html>
