@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){         
+                let answer = 0;
+                for (let x of s) {
+                    //let num = x.charCodeAt();  아스키 코드로 변경해서 출력
+                    //if (num >= 65 && num <= 90) answer++;  아스키 코드 대문자는 65~90 소문자는 97~122
+                    // 대문자 65~90 일 때 answer 은 1씩 카운팅된다.
+                    if (x === x.toUpperCase()) {
+                        answer++;
+                    }
+
+                }
+                return answer;
+            }
+
+            let str="KoreaTimeGood";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
