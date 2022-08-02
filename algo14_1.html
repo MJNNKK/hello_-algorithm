@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer, max = Number.MIN_SAFE_INTEGER; // 가장 작은 수를 넣어준다.
+                for (let x of s) {                         // x가 s를 순서대로 읽는다.
+                    if (x.length > max) {                  // x 배열중 0보다 큰걸 찾는다
+                        max = x.length;                    // 배열이 max보다 크면 맥스에 긴 배열을 넣어주는걸 반복
+                        answer = x;                        // 남은 가장 큰 배열이 answer.
+                    }
+                }
+                
+
+                return answer;
+            }
+            let str=["teacher", "time", "student", "beautiful", "good"];
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
