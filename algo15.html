@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer;
+                let mid = Math.floor(s.length/2);   // Math.floor(s.length/2); 나눠서 버림
+                if (s.length % 2===1) {             // 주어진 문자열의 길이를 나눠서 나머지가 1이면
+                    answer = s.substring(mid, mid + 1); // answer = mid 부터 mid+1 전까지 출력한다.
+                } else {                                  // 주어진 문자열의 길이를 나눠 나머지가 1이 아니면
+                    answer = s.substring(mid - 1, mid +1);// answer = mid - 1 부터 mid + 1 전까지 출력한다.
+                }                                      //s.substr 로 대체 가능  
+                                                       //s.substr(mid, 1) mid부터 시작해 1개를 출력 방식
+                return answer;
+            }
+            console.log(solution("study"));
+        </script>
+    </body>
+</html>
