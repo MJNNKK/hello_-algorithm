@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){         
+                let answer=1, max=arr[0];  // 첫 번째 학생은 무조건 보이기 때문에 answer = 1, max는 첫 번째 학생
+                for (let i = 1; i < arr.length; i++) {
+                    if (arr[i] > max) {    // max 첫 번째 학생보다 n 번 째 학생이 크면 max는 n번째로 바뀐다
+                        answer++;          // max보다 n번 째 학생으 클 때 마다 카운팅
+                        max = arr[i];      // 현재 max보다 arr[i] 가 클 때 max가 arr[i] 로 바뀐다.
+                    }
+                }
+                return answer;
+            }
+
+            let arr=[130, 135, 148, 140, 145, 150, 150, 153];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
