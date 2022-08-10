@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){         
+                let answer=[];
+                answer.push(arr[0]); // 문제를 잘못 이해해 혼자 풀이는 6부터 시작 했는데 첫수를 배열에 넣어줌.
+                for (let i = 1; i < arr.length; i++) {
+                    if (arr[i] > arr[i - 1]) {      // 앞수와 비교하는 식
+                        answer.push(arr[i]);        // 앞수보다 클 때 answer에 push로 큰 수를 넣어줌.
+                    }
+                }
+                return answer;
+            }
+
+            let arr=[7, 3, 9, 5, 6, 12];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
