@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer="YES";  // 회문자인지 아닌지 출력해야하기때문에  answer를 YES로 
+                s = s.toLowerCase(); //s를 소문자로 통일
+                let len = s.length; // s의 길이를 len 변수로 지정
+                for (let i = 0; i < Math.floor(len / 2); i++) { // 앞에만 돌면 되니 len / 2 로 앞에것만 돌린다.
+                    if (s[i] !== s[len - i - 1]) { // s[i] 와 s[len(s의길이) - i(인덱스) -1] 가 같지 않을 때
+                        return "No"  //리턴 "NO"
+                    }
+                }
+     
+                
+                return answer;
+            }
+            
+            let str="goooG";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

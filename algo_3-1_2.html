@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer="YES";
+                s = s.toLowerCase(); // s 를 소문자로 통일
+                if (s.split('').reverse().join('') !== s) {
+                    // s.split ('') === 'g', 'o', 'o', 'o', 'g' 처럼 배열로 바꿔줌
+                    // s.split('').reverse() === 'g', 'o', 'o', 'o', 'g'를 뒤집는다.
+                    //s.split('').reverse().join('') 뒤집은 배열을 다시 string 로 바꿔준다.
+                    return "NO"
+                }
+                
+
+                return answer;
+            }
+            
+            let str="goooG";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
