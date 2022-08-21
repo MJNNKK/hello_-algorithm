@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer="";
+                let cnt = 1;
+                s = s+" "; // s뒤에 띄어쓰기 하나 넣어준다.
+                for(let i = 0; i < s.length; i++) {
+                    if (s[i] === s[i + 1]) { //s[i] === s[i + 1] 일 때 cnt는 +1씩 카운팅된다.
+                        cnt++;
+                    } else { //s[i] !== s[i + 1] 일 때 answer += s[i] 엔서에 s[i] 를 누적
+                        answer += s[i];
+                        if (cnt > 1) { //누적된 cnt가 1보다 클 때 
+                            answer += String(cnt); // answer 에 문자열로 누적된 cnt 를 넣어준다.
+                            cnt = 1;               // 넣어준 후 cnt = 1로 초기화
+                        }
+                    }
+                }
+
+                return answer;
+            }
+            
+            let str="KKHSSSSSSSE";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
