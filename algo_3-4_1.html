@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s, t){
+                let answer=[];
+                let p = 1000; // 주어진 수보다 큰 숫자를 넣어준다.
+                for (let x of s) { // s 를 앞에서 부터 순서대로 읽어나간다.
+                    if (x === t) { //x === t 일 때 p = 0 answer에 p(0) 을(를) push 해준다
+                        p = 0;
+                        answer.push(p);
+                    } else {       // x !== t 일 때 p = +1씩 카운팅 후 answer에 p(+된수)를 push 해준다.
+                        p++;
+                        answer.push(p);
+                    }
+                }
+                p = 1000;
+                for (let i = s.length - 1; i >= 0; i--) { // s를 뒤에서부터 읽어나간다.
+                    if (s[i] === t) { // s[i] === t 일 때 p = 0
+                        p = 0;
+                    } else {   // s[i] !== t 일때 p = +1씩 카운팅
+                        p++;
+                        answer[i] = Math.min(answer[i], p);
+                        //answer[i] = Math.min(answer[i], p) answer[i] 미리구해진 값과 p 를 비교해서 작은 값을
+                        // answer[i] 에 넣어준다.    
+                    }
+                }
+                return answer;
+            }
+            
+            let str="teachermode";
+            console.log(solution(str, 'e'));
+        </script>
+    </body>
+</html>
