@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(n, arr){
+                let answer, max=Number.MIN_SAFE_INTEGER;
+                for (let x of arr) {
+                    let sum = x.toString().split('').reduce((a, b) => a+Number(b), 0)
+                     //x를 문자화 시킨 후 문자 배열화 시킨다. reduce함수로 a + Numnber(b) 숫자화 시켜 하나씩 더한다.
+                     if (sum > max) {
+                        max = sum;
+                        answer = x;
+                        } else if (sum === max) {
+                            if (x > answer) {
+                                answer = x;
+                            }
+                        }
+                }
+                return answer;
+            }
+            
+            let arr=[128, 460, 603, 40, 521, 137, 123];
+            console.log(solution(7, arr));
+        </script>
+    </body>
+</html>

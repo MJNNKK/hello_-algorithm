@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(n, arr){
+                let answer, max=Number.MIN_SAFE_INTEGER;
+                for (let x of arr) {
+                    let sum = 0; tmp = x; // x를 임시변수로 넣어준다.
+                    while(tmp) {
+                        sum += (tmp % 10); // tmp(x) 를 나눈 나머지를 sum에 누적
+                        tmp = Math.floor(tmp/10); // tmp(x) 를 10으로 나눈 후 소수점을 버린다.
+                        // sum에 1의자리(나눈 후 나머지) 를 누적 후 Math.floor 명령어로 10을 나눈 후 소수점을 버린다.
+                        // ex) 128 을 10으로 나눈 나머지는 8 누적 128을 10으로 나눈 후 12.8 소수를 버린다 12
+                        // 반복 12 를 10으로 나눈 나머지 2 누적 후 12를 10으로 나눈 후 1.2 소수점을 버린다.
+                    }
+                    if (sum > max) {
+                        max = sum; //위 코드를 반복 후 가장 큰 수를 max에 넣어준다.
+                        answer = x; // answer = x (임시변수로 넣으면 답이 0이 나온다.)
+                    } else if (sum === max) { // sum과 max가 같을 때
+                        if (x > answer) { // answer보다 x가 클 때
+                            answer = x; // answer = x
+                        }
+                    }
+
+                }
+                return answer;
+            }
+            
+            let arr=[128, 460, 603, 40, 521, 137, 123];
+            console.log(solution(7, arr));
+        </script>
+    </body>
+</html>
