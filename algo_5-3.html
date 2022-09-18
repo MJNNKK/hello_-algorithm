@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(m, arr){
+                let answer=0, lt = 0, sum = 0;
+                for (let rt = 0; rt < arr.length; rt++) { 
+                    sum += arr[rt]; // arr[rt] 값을 sum 에 누적해서 더해준다
+                    if (sum === m) { // 누적된 sum 이 m 과 같아지면
+                        answer++; //answer +1 해준다
+                    }
+                    while (sum >= m) { //sum 이 m 보다 크거나 같을 때 
+                        sum -= arr[lt++]; // 누적된 sum 값에서 arr[lt] 를 빼주고 lt는 +1 해준다
+                        if (sum === m) { // 누전된 sum 값에서 arr[lt] 를 빼서 m과 같아지면
+                            answer++; //answer +1해준다
+                        } //sum값이 m 작을 땐 while문이 거짓 때문에 돌지 않다가
+                    }     //sum값이 m보다 크거나 같아졌을 때 부터 while문이 돌기 시작한다.
+                }
+                return answer;
+            }
+            
+            let a=[1, 2, 1, 3, 1, 1, 1, 2];
+            console.log(solution(6, a));
+        </script>
+    </body>
+</html>
