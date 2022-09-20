@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){  
+                let answer;
+                let sH = new Map(); // sH라는 변수에 새로운 Map(); 맵이라는 객체를 넣어준다.
+                // sH = key, val 값이 한쌍으로 된 객체가 된다.
+                // s의 중복되지 않는 각 문자가 key 값이 된다.
+                // s의 key 값의 카운팅 되는 숫자가 val값이 된다.
+                for (let x of s) { //x = s를 처음부터 끝까지 반복해서 돈다.
+                    if (sH.has(x)) { // sH.has(x) = 키값이 있으면 참이된다.
+                        sH.set(x, sH.get(x)+1);
+                        //sH.set(x, sH.get(x)+1) = x(key)값을 탐색해서 기존 val값에 +1을 해준다.
+                        //sH.set(x(A, B, C, D, E 돌면서 바뀐다.), sH.get(x(앞의 x와 같은 key값)을 만나면 val+1)
+                        
+                    } else {
+                        sH.set(x, 1); //if sH.has(x) 키가 존재하지 않으면
+                        //sH.set(x, 1) x가 A, B, C, D, E 중 key가 존재하지 않는 문자를
+                        //키를 만들어주고 val값을 1로 지정한다. 
+                    }
+                let max = Number.MIN_SAFE_INTEGER; //가장 많은 표를 찾기위해 max에 가장 작은값을 넣어 사용해준다.
+                for (let [key, val] of sH) { // [key, val] of sH === sH의 key, val 값을 탐색한다.
+                    if (val > max) { // val 값이 max보다 크면
+                        max = val;   // max = val값이 된다 (반복해서 가장 큰 값이 max가 된다.)
+                        answer = key; // answer = 가장 큰 val값의 key 값이 되기 때문에 answer = "C"
+                    }
+                }
+                }
+                return answer;
+            }
+
+            let str="BACBACCACCBDEDE";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
